@@ -1,0 +1,27 @@
+[
+    {
+        "Name" : "start_bt",
+        "Events" : [ 
+            {
+                "Time" : 0,
+                "Value" : "ON"
+            },
+
+            {
+                "Time" : 2,
+                "Value" : "OFF"
+            }
+        ]
+    },
+
+    {
+        "Name" : "dial",
+        "Events" : [ 
+            {
+                "Time" : 0,
+                "Value" : "AUTO"
+            }
+        ]
+    }
+
+]

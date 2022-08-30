@@ -1,0 +1,180 @@
+[
+    {
+        "Name" : "Refill_tank",
+        "Capacity" : 15000,
+        "Security volume max" : 12500,
+        "Initial volume" : 0,
+        "Sensor bits" : 255,
+        "Inputs" : [
+            {
+                "Name" : "Return_tank",
+                "Flow type" : "Const",
+                "Flow value" : 100,
+                "Events Time" : {
+                    "Prob Distr" : "Uniform",
+                    "Min" : 1,
+                    "Max" : 3,
+                    "Step" : 1 
+                },
+                "Events Vol" : {
+                    "Prob Distr" : "Uniform",
+                    "Min" : 5000,
+                    "Max" : 10000,
+                    "Step" : 1000 
+                }
+            }
+        ],
+        "Outputs" : [
+            {
+                "Name" : "Storage_tank",
+                "Flow type" : "Const",
+                "Flow value" : 100,
+                "Events Time" : {
+                    "Prob Distr" : "Uniform",
+                    "Min" : 1,
+                    "Max" : 3,
+                    "Step" : 1 
+                },
+                "Events Vol" : {
+                    "Prob Distr" : "Uniform",
+                    "Min" : 5000,
+                    "Max" : 10000,
+                    "Step" : 1000
+                } 
+            }
+        ]
+    },
+    
+    {
+        "Name" : "Storage_tank",
+        "Capacity" : 35000,
+        "Security volume max" : 32500,
+        "Initial volume" : 15000,
+        "Sensor bits" : 255
+    },
+    
+    {
+        "Name" : "Dispenser 1",
+        "Capacity" : 100,
+        "Security volume max" : 12500,
+        "Initial volume" : 0,
+        "Sensor bits" : 255,
+        "Inputs" : [
+            {
+                "Name" : "Storage_tank",
+                "Flow type" : "Const",
+                "Flow value" : 10,
+                "Events Time" : {
+                    "Prob Distr" : "Uniform",
+                    "Min" : 1,
+                    "Max" : 3,
+                    "Step" : 1 
+                },
+                "Events Vol" : {
+                    "Prob Distr" : "Binomial",
+                    "n" : 10000,
+                    "q" : 0.5
+                }
+            }
+        ],
+        "Outputs" : [
+            {
+                "Name" : "Return_tank",
+                "Flow type" : "Const",
+                "Flow value" : 10,
+                "Events Time" : {
+                    "Prob Distr" : "Uniform",
+                    "Min" : 1,
+                    "Max" : 3,
+                    "Step" : 1 
+                },
+                "Events Vol" : {
+                    "Prob Distr" : "Binomial",
+                    "n" : 10000,
+                    "q" : 0.5
+                }
+            }
+        ]
+    },
+
+    {
+        "Name" : "Dispenser 2",
+        "Capacity" : 100,
+        "Security volume max" : 12500,
+        "Initial volume" : 0,
+        "Sensor bits" : 255,
+        "Inputs" : [
+            {
+                "Name" : "Storage_tank",
+                "Flow type" : "Const",
+                "Flow value" : 10,
+                "Events Time" : {
+                    "Prob Distr" : "Uniform",
+                    "Min" : 1,
+                    "Max" : 3,
+                    "Step" : 1 
+                },
+                "Events Vol" : {
+                    "Prob Distr" : "Binomial",
+                    "n" : 10000,
+                    "q" : 0.5
+                }
+            }
+        ],
+        "Outputs" : [
+            {
+                "Name" : "Return_tank",
+                "Flow type" : "Const",
+                "Flow value" : 10,
+                "Events Time" : {
+                    "Prob Distr" : "Uniform",
+                    "Min" : 1,
+                    "Max" : 3,
+                    "Step" : 1 
+                },
+                "Events Vol" : {
+                    "Prob Distr" : "Binomial",
+                    "n" : 10000,
+                    "q" : 0.5
+                }
+            }
+        ]
+    },
+    
+    {
+        "Name" : "Return_tank",
+        "Capacity" : 100000,
+        "Security volume max" : 12500,
+        "Initial volume" : 50000,
+        "Sensor bits" : 255
+    },
+
+    {
+        "Name": "Leak_tank",
+        "Capacity": 500,
+        "Security volume max": 1200,
+        "Sensor bits": 255,
+        "Leak sensor resolution": 1023,
+        "Inputs":[
+            {
+                "Name": "Storage_tank",
+                "Flow type": "Const",
+                "Flow value": 10,
+                "Events Time": {
+                    "Prob Distr": "Uniform",
+                    "Min": 0,
+                    "Max": 100,
+                    "Step": 1 
+                },
+                "Events Vol": {
+                    "Prob Distr": "Uniform",
+                    "Min": 0,
+                    "Max": 5000,
+                    "Step": 100
+                } 
+            }
+        ]
+    }
+
+]
+
